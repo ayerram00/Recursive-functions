@@ -3,9 +3,9 @@ package com.sqa.ay;
 
 public class Fibonacci {
 
-	public static int fibonacci(int nTerm) {
+	static int first = 0, second = 1, current = 0;
 
-		int first = 0, second = 1, third = 0;
+	public static int fibonacci(int nTerm) {
 
 		if (nTerm == 0) {
 			return first;
@@ -13,15 +13,15 @@ public class Fibonacci {
 			return second;
 		} else {
 
-			while (nTerm > 1) {
-				for (int i = 1; i < nTerm; i++) {
-					third = second + first;
-					first = second;
-					second = third;
-
-				}
-			}
-			return third;
+			// while (nTerm > 1) {
+			// for (int i = 1; i < nTerm; i++) {
+			// current = second + first;
+			// first = second;
+			// second = current;
+			//
+			// }
+			// }
+			return (fibonacci(nTerm - 2) + fibonacci(nTerm - 1));
 		}
 
 	}
